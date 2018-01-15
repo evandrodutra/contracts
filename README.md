@@ -24,7 +24,7 @@ bundle exec rails s
 
 #### Running Tests
 
-To run tests exec:
+To run the test environment execute:
 
 ```sh
 bundle exec rspec
@@ -36,7 +36,7 @@ All requests must use `Content-Type: application/json`
 
 ### Authentication
 
-For private endpoint you must expecify the Authorization header using the JWT token genereted for your account, example:
+For a private endpoint you must specify the Authorization header using the JWT token generated for your account, example:
 
 ```sh
 curl -X GET -i -H "Authorization: Bearer MY_JWT_TOKEN" -H "Content-Type: application/json" "http://localhost:3000/contracts/:id"
@@ -106,7 +106,7 @@ When the response contains entity errors the response body returns its descripti
 
 #### POST /users
 
-Crates an user and return its JWT token
+Crates a user and return its JWT token.
 
 ```sh
 POST /users
@@ -152,7 +152,7 @@ Content-Type: "application/vnd.api+json"
 
 #### POST /contracts
 
-Crates a contract for an given user-token and return its data:
+Crates a contract for a given user-token and returns its data:
 
 ```sh
 POST /contracts
@@ -202,7 +202,7 @@ Content-Type: "application/vnd.api+json"
 
 #### GET /contracts/:id
 
-Returns the contract for an given user-token and return its data:
+Returns the contract for a given user-token and returns its data:
 
 ```sh
 GET /contracts/2c31b4fb-ac16-4fce-8634-16f3dd2a093c
