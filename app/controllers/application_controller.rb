@@ -19,6 +19,10 @@ class ApplicationController < ActionController::API
     render_errors(data: { status: 400, detail: "param is missing or the value is empty: data" }, status: :bad_request)
   end
 
+  def respond_with_not_found(entity_name = nil)
+    render_errors(data: { status: 404, detail: "#{entity_name} not found" }, status: :not_found)
+  end
+
   def current_user
     @current_user
   end
