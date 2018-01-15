@@ -1,6 +1,6 @@
 class Auth
   SECRET = Rails.application.secrets.secret_key_base
-  ALGORITHM = "HS256"
+  ALGORITHM = "HS256".freeze
 
   def self.issue_token(user_id)
     JWT.encode({ user: user_id }, SECRET, ALGORITHM)
@@ -15,7 +15,7 @@ class Auth
   end
 
   def self.decode(token)
-    JWT.decode(token, SECRET, true, { algorithm: ALGORITHM }).first.symbolize_keys
+    JWT.decode(token, SECRET, true, algorithm: ALGORITHM).first.symbolize_keys
   rescue
     false
   end

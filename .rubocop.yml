@@ -1,0 +1,55 @@
+Rails:
+  Enabled: true
+
+Rails/NotNullColumn:
+  Enabled: false
+
+AllCops:
+  Exclude:
+    - db/schema.rb
+    - db/migrate/*.rb
+    - bin/**
+    - vendor/**/*
+    - tmp/**/*
+    - config/**/*
+    - lib/tasks/*.rake
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 80
+
+Metrics/ClassLength:
+  Max: 199
+
+Metrics/MethodLength:
+  Max: 40
+
+Style/Documentation:
+  Enabled: false
+
+Layout/IndentArray:
+  EnforcedStyle: consistent
+
+Layout/FirstParameterIndentation:
+  EnforcedStyle: consistent
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Layout/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+CaseIndentation:
+  EnforcedStyle: end
+  IndentOneStep: true
+
+Rails/HasManyOrHasOneDependent:
+  Enabled: false

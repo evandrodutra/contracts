@@ -41,7 +41,7 @@ RSpec.describe "HTTP Status Resquests", type: :request do
 
     expect(response).to have_http_status :unauthorized
     expect(json_error[:status]).to eq(401)
-    expect(json_error[:detail]).to eq('Unauthorized')
+    expect(json_error[:detail]).to eq("Unauthorized")
   end
 
   it "responds with status :not_found" do

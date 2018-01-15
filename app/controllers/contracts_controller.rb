@@ -1,5 +1,5 @@
 class ContractsController < ApplicationController
-  before_action :assign_contract, only: [:show, :destroy]
+  before_action :assign_contract, only: %i[show destroy]
 
   def show
     render json: @contract, status: :ok
@@ -23,14 +23,13 @@ class ContractsController < ApplicationController
   private
 
   def contract_params
-    params.require(:data).permit(:contract, {
-      attributes: [:vendor, :starts_on, :ends_on, :price]
-    })
+    params.require(:data).permit(:contract,
+      attributes: %i[vendor starts_on ends_on price])
   end
 
   def assign_contract
     @contract = current_user.contracts.where(id: params[:id]).first
 
-    return respond_with_not_found('Contract') unless @contract
+    return respond_with_not_found("Contract") unless @contract
   end
 end

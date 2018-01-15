@@ -1,7 +1,6 @@
 require "rails_helper"
 
 RSpec.describe Contract, type: :model do
-
   describe "validations" do
     it { expect(subject).to belong_to(:user) }
     it { expect(subject).to validate_presence_of(:user_id) }

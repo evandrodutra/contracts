@@ -14,8 +14,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:data).permit(:user, {
-      attributes: [:full_name, :email, :password]
-    })
+    params.require(:data).permit(:user,
+      attributes: %i[full_name email password])
   end
 end

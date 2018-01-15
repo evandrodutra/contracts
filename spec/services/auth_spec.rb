@@ -7,8 +7,8 @@ RSpec.describe Auth do
   context "issue a new JWT token" do
     it "returns a JWT token for a given user_id" do
       jwt = JWT.encode({ user: user.id },
-              described_class::SECRET,
-              described_class::ALGORITHM)
+        described_class::SECRET,
+        described_class::ALGORITHM)
       expect(token).to eq(jwt)
     end
   end
@@ -25,7 +25,7 @@ RSpec.describe Auth do
 
   context "decodes a given token" do
     it "returns user id when token is valid" do
-      expect(described_class.decode(token)).to eq({ user: user.id })
+      expect(described_class.decode(token)).to eq(user: user.id)
     end
 
     it "returns false when token is invalid" do
