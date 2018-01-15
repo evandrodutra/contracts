@@ -1,7 +1,7 @@
 Contracts API
 ================
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/f94b4cf96cb3920c62f8/maintainability)](https://codeclimate.com/github/evandrodutra/contracts/maintainability)
+[![CircleCI](https://circleci.com/gh/evandrodutra/contracts.svg?style=svg)](https://circleci.com/gh/evandrodutra/contracts) [![Maintainability](https://api.codeclimate.com/v1/badges/f94b4cf96cb3920c62f8/maintainability)](https://codeclimate.com/github/evandrodutra/contracts/maintainability)
 
 Contracts API is a simple Rails API designed to manage vendor contracts and its lifetime.
 
@@ -12,7 +12,7 @@ Contracts API is a simple Rails API designed to manage vendor contracts and its 
 
 ## Getting Started
 
-Clone the repository, install gems and setup the database by running:
+Clone the repository, install gems and setup the database running the following commands:
 
 ```sh
 git clone git@github.com:evandrodutra/contracts.git
@@ -26,7 +26,7 @@ bundle exec rails s
 
 #### Running Tests
 
-To run the test environment execute:
+To run the test environment execute rspec:
 
 ```sh
 bundle exec rspec
@@ -34,7 +34,7 @@ bundle exec rspec
 
 ## API Definitions
 
-All requests must use `Content-Type: application/json`
+All requests must use `Content-Type: application/json` header.
 
 ### Authentication
 
@@ -46,7 +46,7 @@ curl -X GET -i -H "Authorization: Bearer MY_JWT_TOKEN" -H "Content-Type: applica
 
 ### POST data body
 
-All POST action that sends a content body must use the JSON-API format, example:
+All POST actions that sends a content body must use the JSON-API format, example:
 
 ```json
 {
@@ -106,9 +106,9 @@ When the response contains entity errors the response body returns its descripti
 
 ## API Usage
 
-#### POST /users
+#### POST /users (Public)
 
-Crates a user and return its JWT token.
+Crates a user and returns its JWT token.
 
 ```sh
 POST /users
@@ -152,7 +152,7 @@ Content-Type: "application/vnd.api+json"
 }
 ```
 
-#### POST /contracts
+#### POST /contracts (Private)
 
 Crates a contract for a given user-token and returns its data:
 
@@ -202,7 +202,7 @@ Content-Type: "application/vnd.api+json"
 }
 ```
 
-#### GET /contracts/:id
+#### GET /contracts/:id (Private)
 
 Returns the contract for a given user-token and returns its data:
 
@@ -238,7 +238,7 @@ Content-Type: "application/vnd.api+json"
 }
 ```
 
-#### DELETE /contracts/:id
+#### DELETE /contracts/:id (Private)
 
 Deletes a contract for a given user-token:
 
