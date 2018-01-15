@@ -4,6 +4,7 @@ RSpec.describe User, type: :model do
 
   describe "validations" do
     it { expect(subject).to have_secure_password }
+    it { expect(subject).to have_many(:contracts) }
     it { expect(subject).to validate_presence_of(:full_name) }
     it { expect(subject).to validate_presence_of(:email) }
     it { expect(subject).to validate_presence_of(:password_digest) }

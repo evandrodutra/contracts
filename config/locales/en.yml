@@ -3,3 +3,4 @@ en:
     messages:
       blank: should not be empty
       taken: is already taken
+      greater_than: should be greater than %{count}
