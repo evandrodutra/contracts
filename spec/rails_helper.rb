@@ -1,4 +1,5 @@
 require 'spec_helper'
+require "json_matchers/rspec"
 
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)

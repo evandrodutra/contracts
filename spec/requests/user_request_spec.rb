@@ -14,6 +14,7 @@ RSpec.describe "User Resquests", type: :request do
       post "/users", params: { data: { attributes: user_attributes } }
 
       expect(response).to have_http_status :created
+      expect(JSON.parse(response.body)).to match_response_schema(:user)
     end
 
     # Given  I don’t have an account
@@ -73,6 +74,12 @@ RSpec.describe "User Resquests", type: :request do
     # Then  a user token should be generated
     # And  this token will be used for authentication purposes
     it "creates an account with a JWT token" do
+      post "/users", params: { data: { attributes: user_attributes } }
+
+      created_user = User.where(email: "paranoid@example.com").first
+
+      expect(response).to have_http_status :created
+      expect(json_data[:attributes][:jwt]).to eq(Auth.issue_token(created_user.id))
     end
   end
 end
