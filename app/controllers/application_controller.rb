@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::API
   before_action :authenticate_user
 
+  attr_reader :current_user
+
   rescue_from ActionController::ParameterMissing,
     with: :respond_with_bad_request
 
@@ -36,8 +38,6 @@ class ApplicationController < ActionController::API
                     detail: "#{entity_name} not found"
                   }, status: :not_found)
   end
-
-  attr_reader :current_user
 
   def authenticate_user
     user = Auth.authenticate(authorization_token)
