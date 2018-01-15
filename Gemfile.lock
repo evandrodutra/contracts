@@ -122,7 +122,6 @@ DEPENDENCIES
   pg (~> 0.18)
   puma (~> 3.7)
   rails (~> 5.1.4)
-  tzinfo-data
 
 BUNDLED WITH
    1.16.1
