@@ -1,6 +1,8 @@
 Contracts API
 ================
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/f94b4cf96cb3920c62f8/maintainability)](https://codeclimate.com/github/evandrodutra/contracts/maintainability)
+
 Contracts API is a simple Rails API designed to manage vendor contracts and its lifetime.
 
 ## Requirements
@@ -48,11 +50,11 @@ All POST action that sends a content body must use the JSON-API format, example:
 
 ```json
 {
-  data: {
-    attributes: {
-      full_name: "Douglas Adams",
-      email: "dm@example.com",
-      password: "humans"
+  "data": {
+    "attributes": {
+      "full_name": "Douglas Adams",
+      "email": "dm@example.com",
+      "password": "humans"
     }
   }
 }
@@ -113,11 +115,11 @@ POST /users
 Content-Type: "application/json"
 
 {
-  data: {
-    attributes: {
-      full_name: "Douglas Adams",
-      email: "dm@example.com",
-      password: "humans"
+  "data": {
+    "attributes": {
+      "full_name": "Douglas Adams",
+      "email": "dm@example.com",
+      "password": "humans"
     }
   }
 }
@@ -160,12 +162,12 @@ Content-Type: "application/json"
 Authorization: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiZjNhMTc1MTgtM2M4NS00NDFiLWJiOTktNDQ4ZmQ3ZGEwYTAwIn0.8ilUS6nx8OlM1KLHvHV6_PE1pCoiaeq_TQczvLl6rzg"
 
 {
-  data: {
-    attributes: {
-      vendor: "DB",
-      starts_on: "30-01-2018",
-      ends_on: "30-12-2018",
-      price: "328.79"
+  "data": {
+    "attributes": {
+      "vendor": "DB",
+      "starts_on": "30-01-2018",
+      "ends_on": "30-12-2018",
+      "price": "328.79"
     }
   }
 }
